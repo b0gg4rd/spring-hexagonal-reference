@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Spring Hexagonal Reference
+  version: 1.0.0-SNAPSHOT
+tags:
+  - name: Persons
+paths:
+  /persons:
+    post:
+      tags:
+        - Persons
+      operationId: create-one-person
+      summary: Create one person.
+      requestBody:
+        $ref: '#/components/schemas/CreateOnePersonRequest'
+      responses:
+        '201':
+          description: Person created.
+          headers:
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateAllPricesResponse'
+    get:
+      tags:
+        - Persons
+      operationId: retrieve-all-persons
+      summary: Retrieve all persons.
+      responses:
+        content:
+          application/json:
+            $ref: "#/components/schemas/RetrieveAllPersonsResponse"
+
+components:
+  schemas:
+    CreateOnePersonRequest:
+        type: object
+        properties:
+          name:
+            type: string
+          age:
+            type: integer
+    RetrieveAllPersonsResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer

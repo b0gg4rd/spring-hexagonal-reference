@@ -1,0 +1,32 @@
+# spring-hexagonal-reference
+
+###
+# @name health
+GET {{server}}/actuator/health
+
+###
+# @name create-one-person
+POST {{server}}/persons
+Content-Type: application/json
+
+{
+  "name": "Ameyali Rodríguez",
+  "age": 42
+}
+
+> {%
+  client.test("given_correct_body_when_execute_then_status_201", function() {
+    client.assert(response.status === 201, "Response status is not 201");
+  });
+%}
+
+###
+# @name retrieve-all-persons
+GET {{server}}/persons
+Accept: application/json
+
+> {%
+  client.test("given_correct_request_when_execute_then_status_200", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}

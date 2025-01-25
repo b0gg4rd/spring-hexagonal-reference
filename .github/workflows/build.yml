@@ -1,0 +1,14 @@
+name: build workflow
+run-name: ${{github.actor}} is building the project
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+      - run: ./mvnw -Djansi.force=true -ntp -P local -U clean package docker:build
