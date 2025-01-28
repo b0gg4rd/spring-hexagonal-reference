@@ -9,7 +9,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-  <changeSet id="setup-table-catalogs" author="fcruzlinko" context="setup">
+  <changeSet id="setup-table-catalogs" author="b0gg4rd" context="setup">
     <loadData tableName="catalogs"
               file="setup/catalogs.csv">
     </loadData>

@@ -18,7 +18,7 @@
   <packaging>jar</packaging>
 
   <name>spring-hexagonal-reference</name>
-  <description></description>
+  <description>Spring Hexagonal Reference</description>
 
   <properties>
     <java.version>21</java.version>
@@ -56,11 +56,11 @@
     <liquibase.properties.file>${project.build.outputDirectory}/liquibase.properties</liquibase.properties.file>
     <liquibase.build.directory>${project.basedir}/src/main/liquibase</liquibase.build.directory>
 
+    <docker.build.directory>${project.basedir}/src/main/docker</docker.build.directory>
     <docker.image.alias>${project.artifactId}</docker.image.alias>
     <docker.image.registry>docker.io</docker.image.registry>
     <docker.image.name>${project.artifactId}:${project.version}</docker.image.name>
-    <docker.image.build.directory>${project.basedir}/src/main/docker</docker.image.build.directory>
-    <docker.image.build.dockerfiledir>${project.build.outputDirectory}</docker.image.build.dockerfiledir>
+    <docker.image.dockerfiledir>${project.build.outputDirectory}</docker.image.dockerfiledir>
   </properties>
 
   <dependencies>
@@ -116,7 +116,11 @@
         <filtering>true</filtering>
       </resource>
       <resource>
-        <directory>${docker.image.build.directory}</directory>
+        <directory>${openapi.build.directory}</directory>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>${docker.build.directory}</directory>
         <filtering>true</filtering>
       </resource>
       <resource>
@@ -228,7 +232,7 @@
               <registry>${docker.image.registry}</registry>
               <name>${docker.image.name}</name>
               <build>
-                <dockerFileDir>${docker.image.build.dockerfiledir}</dockerFileDir>
+                <dockerFileDir>${docker.image.dockerfiledir}</dockerFileDir>
                 <assembly>
                   <name>artifact</name>
                   <descriptorRef>artifact</descriptorRef>

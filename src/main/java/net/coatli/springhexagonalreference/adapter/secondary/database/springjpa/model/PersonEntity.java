@@ -1,6 +1,7 @@
 package net.coatli.springhexagonalreference.adapter.secondary.database.springjpa.model;
 
 import com.jsoniter.output.JsonStream;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,9 +27,23 @@ public class PersonEntity {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private String id;
 
-  private String name;
+  @Column(name = "names")
+  private String names;
 
-  private Integer age;
+  @Column(name = "first_surname")
+  private String firstSurname;
+
+  @Column(name = "second_surname")
+  private String secondSurname;
+
+  @Column(name = "gender")
+  private String gender;
+
+  @Column(name = "birthday")
+  private String birthday;
+
+  @Column(name = "curp")
+  private String curp;
 
   @Override
   public String toString() {

@@ -1,9 +1,9 @@
-package net.coatli.springhexagonalreference.adapter.primary.springweb;
+package net.coatli.springhexagonalreference.adapter.primary.httpapi.springweb;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.coatli.springhexagonalreference.adapter.primary.model.CreateOnePersonRequest;
-import net.coatli.springhexagonalreference.adapter.primary.model.mapper.PersonsHttpApiAdapterMapper;
+import net.coatli.springhexagonalreference.adapter.primary.httpapi.model.CreateOnePersonRequest;
+import net.coatli.springhexagonalreference.adapter.primary.httpapi.model.mapper.PersonsHttpApiAdapterMapper;
 import net.coatli.springhexagonalreference.application.port.CreateOnePersonCommand;
 import net.coatli.springhexagonalreference.common.StringLiterals;
 import org.springframework.http.HttpEntity;

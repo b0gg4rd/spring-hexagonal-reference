@@ -16,9 +16,17 @@ public class Person {
 
   private String id;
 
-  private String name;
+  private String names;
 
-  private Integer age;
+  private String firstSurname;
+
+  private String secondSurname;
+
+  private String gender;
+
+  private String birthday;
+
+  private String curp;
 
   @Override
   public String toString() {

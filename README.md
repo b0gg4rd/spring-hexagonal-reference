@@ -6,11 +6,12 @@
 
 ## Building
 
-- Create data base container
+- Create database container
 
 ```shell
 docker run -d \
   --net=host \
+  --rm \
   --name=spring-hexagonal-reference-db \
   -e POSTGRES_PASSWORD=root \
   postgres:17.2

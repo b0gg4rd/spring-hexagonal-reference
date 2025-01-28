@@ -20,7 +20,7 @@ public class CreateOnePersonCommandUseCase implements CreateOnePersonCommand {
   private final CreateOnePersonCommandUseCaseMapper createOnePersonCommandUseCaseMapper;
 
   @Override
-  public CreateOnePersonCommandOutput execute(CreateOnePersonCommandInput createOnePersonCommandInput) {
+  public CreateOnePersonCommandOutput execute(final CreateOnePersonCommandInput createOnePersonCommandInput) {
 
     LOGGER.info(
       StringLiterals.LOG_USE_CASE_CREATE_PERSON,

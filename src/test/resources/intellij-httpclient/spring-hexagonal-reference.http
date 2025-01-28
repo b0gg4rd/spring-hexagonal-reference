@@ -10,8 +10,11 @@ POST {{server}}/persons
 Content-Type: application/json
 
 {
-  "name": "Ameyali Rodríguez",
-  "age": 42
+  "a1": "Ameyali",
+  "a2": "Rodríguez",
+  "a3": "Bárcenas",
+  "a4": "F",
+  "a5": "30/05/1980"
 }
 
 > {%

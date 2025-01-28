@@ -10,9 +10,9 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface CreateOnePersonCommandUseCaseMapper {
 
+  @Mapping(target = ".", source = "person")
   Person createOnePersonCommandInput2Person(CreateOnePersonCommandInput createOnePersonCommandInput);
 
-  @Mapping(target = "id", source = "id")
   CreateOnePersonCommandOutput person2CreateOnePersonCommandOutput(Person person);
 
 }

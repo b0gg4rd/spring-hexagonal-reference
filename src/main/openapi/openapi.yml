@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
-  title: Spring Hexagonal Reference
-  version: 1.0.0-SNAPSHOT
+  title: @project.description@
+  version: @project.version@
 tags:
   - name: Persons
 paths:
@@ -17,11 +17,6 @@ paths:
         '201':
           description: Person created.
           headers:
-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UpdateAllPricesResponse'
     get:
       tags:
         - Persons
@@ -31,20 +26,47 @@ paths:
         content:
           application/json:
             $ref: "#/components/schemas/RetrieveAllPersonsResponse"
-
 components:
   schemas:
     CreateOnePersonRequest:
         type: object
         properties:
-          name:
+          a1:
             type: string
-          age:
-            type: integer
+            description: Names.
+          a2:
+            type: string
+            description: First surname.
+          a3:
+            type: string
+            description: Second surname.
+          a4:
+            type: string
+            description: Gender.
+          a5:
+            type: string
+            description: Birthday
     RetrieveAllPersonsResponse:
       type: object
       properties:
-        name:
+        a0:
           type: string
-        age:
-          type: integer
+          description: Unique identifier.
+        a1:
+          type: string
+          description: Names.
+        a2:
+          type: string
+          description: First surname.
+        a3:
+          type: string
+          description: Second surname.
+        a4:
+          type: string
+          description: Gender.
+        a5:
+          type: string
+          description: Birthday
+        a6:
+          type: string
+          description: CURP.

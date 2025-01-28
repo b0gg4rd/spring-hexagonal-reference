@@ -14,9 +14,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class CreateOnePersonCommandInput {
 
-  private String name;
-
-  private Integer age;
+  private Person person;
 
   @Override
   public String toString() {
